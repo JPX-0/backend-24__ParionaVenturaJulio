@@ -1,0 +1,1 @@
+export { normalizedMessages } from './mensajes.js';
