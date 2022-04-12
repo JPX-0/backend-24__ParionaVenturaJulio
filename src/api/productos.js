@@ -1,10 +1,7 @@
-// import productsSchema from '../../scripts/crearTabla.js';
-// import ContainerMongo from '../contenedores/ContenedorMongo.js';
-import config from '../config.js'
+import config from "../config.js"
 
-import ContenedorArchivo from '../contenedores/ContenedorArchivo.js'
+import FileContainer from "../contenedores/FileContainer.js"
 
-const productsApi = new ContenedorArchivo(`${config.fileSystem.path}/productos.json`)
-// const productsApi = new ContainerMongo("products", productsSchema)
+const productsApi = new FileContainer(`${config.fileSystem.path}/productos.json`);
 
 export default productsApi;

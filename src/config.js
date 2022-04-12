@@ -1,14 +1,16 @@
+import "dotenv/config";
+
 export default {
   PORT: process.env.PORT || 8080,
   mongoLocal: {
-    client: `mongodb`,
-    cnxStr: `mongodb://localhost:27017/coderhouse`
+    client: "mongodb",
+    cnxStr: "mongodb://localhost:27017/coderhouse"
   },
   mongoRemote: {
-    client: `mongodb`,
-    cnxStr: `mongodb+srv://JulioCPV:Goteukemeyito9@backend-coderhouse.gevai.mongodb.net/coderhouse?retryWrites=true&w=majority`
+    client: "mongodb",
+    cnxStr: process.env.DB_URI
   },
   fileSystem: {
-    path: `./DB`
+    path: "./DB"
   }
 };

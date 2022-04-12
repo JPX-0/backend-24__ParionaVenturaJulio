@@ -1,7 +1,7 @@
-import config from '../config.js';
+import config from "../config.js";
 
-import ContenedorArchivo from '../contenedores/ContenedorArchivo.js';
+import FileContainer from "../contenedores/FileContainer.js";
 
-const menssagesApi = new ContenedorArchivo(`${config.fileSystem.path}/mensajes.json`);
+const menssagesApi = new FileContainer(`${config.fileSystem.path}/mensajes.json`);
 
 export default menssagesApi;

@@ -1,1 +1,1 @@
-export { normalizedMessages } from './mensajes.js';
+export { normalizedMessages } from "./mensajes.js";

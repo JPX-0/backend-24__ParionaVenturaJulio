@@ -17,9 +17,10 @@ authWebRouter.get("/login", (req, res) => {
 authWebRouter.get("/logout", (req, res) => {
   const nameUser = req.session?.nombre;
   if(nameUser) {
+    res.clearCookie('my-session');
     req.session.destroy(err => {
-      if(!err) res.render(path.join(process.cwd(), "/views/pages/logout.ejs"), { nombre: nameUser });
-      else res.redirect("/");
+      if(err) res.clearCookie('my-session');
+      res.render(path.join(process.cwd(), "/views/pages/logout.ejs"), { nombre: nameUser });
     });
   } else res.redirect("/");
 });

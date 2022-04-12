@@ -37,10 +37,10 @@ function makeHtmlTable(products) {
 const schemaAuthor = new normalizr.schema.Entity("author", {}, { idAttribute: "id" });
 
 // Definimos un esquema de mensaje
-const schemaMensaje = new normalizr.schema.Entity("post", { author: schemaAuthor }, { idAttribute: "_id" });
+const schemaMessage = new normalizr.schema.Entity("post", { author: schemaAuthor }, { idAttribute: "_id" });
 
 // Definimos un esquema de posts
-const schemaMessages = new normalizr.schema.Entity("posts", { mensajes: [schemaMensaje] }, { idAttribute: "id" });
+const schemaMessages = new normalizr.schema.Entity("posts", { mensajes: [schemaMessage] }, { idAttribute: "id" });
 /* ----------------------------------------------------------------------------- */
 
 const inputUsername = document.getElementById("username");

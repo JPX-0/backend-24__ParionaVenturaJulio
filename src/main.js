@@ -36,15 +36,13 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 app.use(session({
+  name: 'my-session',
 	// store: MongoStore.create({ mongoUrl: config.mongoLocal.cnxStr }),
 	store: MongoStore.create({ 
 		mongoUrl: config.mongoRemote.cnxStr, 
-		mongoOptions: { 
-			useNewUrlParser: true, 
-			useUnifiedTopology: true 
-		} 
+		mongoOptions: { useNewUrlParser: true } 
 	}),
-	secret: "shhhhhhhhhhhhhhhhhhhhh",
+	secret: ["top-secret-1"],
 	resave: false,
 	saveUninitialized: false,
 	rolling: true,
